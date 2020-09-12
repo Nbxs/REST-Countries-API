@@ -192,7 +192,7 @@ body.det{
   right:0;
 }
 
-.hoverArea:hover .dropOpt{
+.hoverArea:hover .dropOpt, .hoverArea:active .dropOpt{
   display: block;
 }
 
