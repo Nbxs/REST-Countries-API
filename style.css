@@ -496,6 +496,6 @@ body.det{
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   -webkit-transform-origin: 0 0;
-          transform-origin: 0 0; /* see note above */
+          transform-origin: 0 0; 
 }
 .ldio-vwhdwxdnh8e div { box-sizing: content-box; }
