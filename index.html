@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>REST Countries API</title>
@@ -15,7 +15,6 @@
     <div style="padding: 3vw 6vw">
       <div id="controlsWrap">
         <div id="search"><i class="fas fa-search"></i><input v-model="search" placeholder="Search for a country..." /></div>
-
         <div class="dropdown">
           <div class="hoverArea">
             <a class="dropBtn">Filter by Region &nbsp; <i class="fas fa-chevron-down"></i></a>
@@ -47,7 +46,7 @@
       <div v-html="botLoad"></div>
     </div>
   </div>
-  <!--<div v-show="showDetail">-->
+  
   <div id="detailScreen">
     <a id="detailBackButton" @click="showDetail = false"><i class="far fa-arrow-left"></i> &nbsp;Back</a>
     <div id="detailWrap">
