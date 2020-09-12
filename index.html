@@ -2,13 +2,13 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>CodePen - REST Countries API</title>
+  <title>REST Countries API</title>
   <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&amp;display=swap'>
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css'><link rel="stylesheet" href="./style.css">
 
 </head>
 <body>
-<!-- partial:index.partial.html -->
+
 <div id="a" :class="{'darkTheme': dark, 'det': showDetail === true,'nodet': !showDetail}">
   <div id="mainScreen">
     <div id="navbar">Where in the world? <a id="themeToggle" @click="dark = !dark"><i class="far fa-moon"></i> Dark Mode</a></div>
@@ -32,7 +32,6 @@
       </div>
       <div v-html="message"></div>
       <div id="gridWrap">
-        <!--<div style="display: inline" v-html="message"></div>-->
         <template v-for="c in sortFil">
           <div v-bind:id="c.name" class="infoCard" @click="showDetailModal(c.name)">
             <img alt="flag" v-bind:src="c.flagUrl" />
