@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - REST Countries API</title>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&amp;display=swap'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="a" :class="{'darkTheme': dark, 'det': showDetail === true,'nodet': !showDetail}">
+  <div id="mainScreen">
+    <div id="navbar">Where in the world? <a id="themeToggle" @click="dark = !dark"><i class="far fa-moon"></i> Dark Mode</a></div>
+    <div style="padding: 3vw">
+      <div id="search"><i class="fas fa-search"></i><input v-model="search" placeholder="Search for a country..." /></div>
+      <div id="gridWrap">
+        <!--  <div id="search"></div>-->
+        {{message}}
+        <template v-for="c in searchFil">
+          <div v-bind:id="c.name" class="infoCard" @click="showDetailModal(c.name)">
+            <img alt="flag" v-bind:src="c.flagUrl" />
+            <div class="info">
+              <div class="cty">{{c.name}}</div>
+              <div><span>Population:</span> {{c.pop}}</div>
+              <div><span>Region:</span> {{c.region}}</div>
+              <div><span>Capital:</span> {{c.cap}}</div>
+            </div>
+          </div>
+        </template>
+      </div>
+    </div>
+  </div>
+  <!--<div v-show="showDetail">-->
+  <div id="detailScreen">
+    <a id="detailBackButton" @click="showDetail = false"><i class="far fa-arrow-left"></i> &nbsp;Back</a>
+    <div id="detailWrap">
+      <div>
+        <img id="detailFlag" alt="flag" :src="detFlag" />
+      </div>
+      <div>
+      <div id="detailInfo">
+        <div style="transform: translateY(-14px)">
+          <h2>{{detTitle}}</h2>
+          <div><span>Native Name: </span>{{det1}}</div>
+          <div><span>Population: </span>{{det2}}</div>
+          <div><span>Region: </span>{{det3}}</div>
+          <div><span>Sub Region: </span>{{det4}}</div>
+          <div><span>Capital: </span>{{det5}}</div>
+        </div>
+        <div>
+          <div><span>Top Level Domain: </span>{{det6}}</div>
+          <div><span>Currencies: </span>{{det7}}</div>
+          <div><span>Languages: </span>{{det8}}</div>
+        </div>
+        </div>
+        <div id="brdrWrap">
+          <span>Borders:</span>
+        <template v-for="n in det9">
+          <div class="neighbor">{{n}}</div>
+        </template>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--</div>-->
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
